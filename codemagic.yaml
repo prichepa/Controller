@@ -1,6 +1,6 @@
 workflows:
   maui-ios:
-    name: Build MAUI iOS App
+    name: Build MAUI iOS App (no signing)
     environment:
       xcode: latest
     scripts:
@@ -12,20 +12,33 @@ workflows:
           export DOTNET_ROOT=$HOME/.dotnet
           export PATH=$HOME/.dotnet:$PATH
           dotnet --version
+
       - name: Установка MAUI workload
         script: |
           export DOTNET_ROOT=$HOME/.dotnet
           export PATH=$HOME/.dotnet:$PATH
           dotnet workload install maui
+
       - name: Восстановление зависимостей
         script: |
           export DOTNET_ROOT=$HOME/.dotnet
           export PATH=$HOME/.dotnet:$PATH
           dotnet restore Controller.sln
-      - name: Сборка IPA
+
+      - name: Сборка IPA (без подписи)
         script: |
           export DOTNET_ROOT=$HOME/.dotnet
           export PATH=$HOME/.dotnet:$PATH
-          dotnet publish Controller/Controller.csproj -f:net8.0-ios -c:Release -p:ArchiveOnBuild=true -p:Platform=iPhone
+          dotnet publish Controller/Controller.csproj \
+            -f:net8.0-ios -c:Release \
+            -p:ArchiveOnBuild=true \
+            -p:Platform=iPhone \
+            -p:CodesignKey="" \
+            -p:CodesignProvision=""
+
+      - name: Поиск IPA файла
+        script: |
+          find . -name "*.ipa"
+
     artifacts:
       - "**/*.ipa"
