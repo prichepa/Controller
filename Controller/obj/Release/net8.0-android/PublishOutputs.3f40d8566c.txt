@@ -1,0 +1,4 @@
+C:\Users\Gipopotamus\Desktop\CHEREPOK\Arduino\hodovaiaChast\Controller\Controller\bin\Release\net8.0-android\publish\com.companyname.controller-Signed.aab
+C:\Users\Gipopotamus\Desktop\CHEREPOK\Arduino\hodovaiaChast\Controller\Controller\bin\Release\net8.0-android\publish\com.companyname.controller.aab
+C:\Users\Gipopotamus\Desktop\CHEREPOK\Arduino\hodovaiaChast\Controller\Controller\bin\Release\net8.0-android\publish\com.companyname.controller-Signed.apk
+C:\Users\Gipopotamus\Desktop\CHEREPOK\Arduino\hodovaiaChast\Controller\Controller\bin\Release\net8.0-android\publish\_Microsoft.Android.Resource.Designer.dll
