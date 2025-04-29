@@ -34,10 +34,12 @@ workflows:
             -p:ArchiveOnBuild=true \
             -p:Platform=iPhone \
             -p:CodesignKey="" \
-            -p:CodesignProvision=""
+            -p:CodesignProvision="" \
+            -p:EnableCodeSigning=false
 
       - name: Поиск IPA файла
         script: |
+          echo "Ищем .ipa файл..."
           find . -name "*.ipa"
 
     artifacts:
