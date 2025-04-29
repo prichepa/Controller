@@ -1,0 +1,19 @@
+workflows:
+  ios-workflow:
+    name: iOS MAUI Build
+    environment:
+      vars:
+        DOTNET_VERSION: '8.0.x'
+      xcode: latest
+    scripts:
+      - name: Install .NET MAUI
+        script: |
+          dotnet workload install maui
+      - name: Restore dependencies
+        script: |
+          dotnet restore Controller/Controller.csproj
+      - name: Build iOS .ipa
+        script: |
+          dotnet publish Controller/Controller.csproj -f:net8.0-ios -c:Release -p:ArchiveOnBuild=true -p:Platform=iPhone
+    artifacts:
+      - build/**/**/*.ipa
