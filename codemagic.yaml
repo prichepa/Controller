@@ -3,22 +3,29 @@ workflows:
     name: Build MAUI iOS App
     environment:
       xcode: latest
-      cocoapods: default
-      vars:
-        DOTNET_ROOT: /usr/local/share/dotnet
-        PATH: /usr/local/share/dotnet:$PATH
     scripts:
-      - name: Проверка .NET
+      - name: Установка .NET SDK
         script: |
+          curl -sSL https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
+          chmod +x dotnet-install.sh
+          ./dotnet-install.sh --version 8.0.100
+          export DOTNET_ROOT=$HOME/.dotnet
+          export PATH=$HOME/.dotnet:$PATH
           dotnet --version
       - name: Установка MAUI workload
         script: |
+          export DOTNET_ROOT=$HOME/.dotnet
+          export PATH=$HOME/.dotnet:$PATH
           dotnet workload install maui
       - name: Восстановление зависимостей
         script: |
+          export DOTNET_ROOT=$HOME/.dotnet
+          export PATH=$HOME/.dotnet:$PATH
           dotnet restore Controller.sln
-      - name: Сборка iOS-приложения
+      - name: Сборка IPA
         script: |
+          export DOTNET_ROOT=$HOME/.dotnet
+          export PATH=$HOME/.dotnet:$PATH
           dotnet publish Controller/Controller.csproj -f:net8.0-ios -c:Release -p:ArchiveOnBuild=true -p:Platform=iPhone
     artifacts:
       - "**/*.ipa"
