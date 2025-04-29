@@ -3,13 +3,23 @@
 <plist version="1.0">
 <dict>
     <key>CFBundleIdentifier</key>
-    <string>com.gipopotamus.cherepok</string> <!-- Уникальный идентификатор приложения -->
+    <string>com.prichepa.controller</string> <!-- Уникальный идентификатор приложения -->
     <key>CFBundleName</key>
-    <string>CherepokController</string> <!-- Название приложения -->
+    <string>Controller</string> <!-- Название приложения -->
     <key>CFBundleVersion</key>
     <string>1.0.0</string> <!-- Версия сборки -->
     <key>CFBundleShortVersionString</key>
     <string>1.0</string> <!-- Видимая пользователю версия -->
+
+
+
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Дай геолокацию нигга</string>
+
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>Дай блютуз нигга</string>
+
+
 
     <key>LSRequiresIPhoneOS</key>
     <true/>

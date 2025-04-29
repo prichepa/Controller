@@ -308,3 +308,4 @@ C:\Users\Gipopotamus\Desktop\CHEREPOK\Arduino\hodovaiaChast\Controller\Controlle
 C:\Users\Gipopotamus\Desktop\CHEREPOK\Arduino\hodovaiaChast\Controller\Controller\obj\Release\net8.0-ios\ios-arm64\Controller.pdb
 C:\Users\Gipopotamus\Desktop\CHEREPOK\Arduino\hodovaiaChast\Controller\Controller\obj\Release\net8.0-ios\ios-arm64\Controller.genruntimeconfig.cache
 C:\Users\Gipopotamus\Desktop\CHEREPOK\Arduino\hodovaiaChast\Controller\Controller\obj\Release\net8.0-ios\ios-arm64\ref\Controller.dll
+C:\Users\Gipopotamus\Desktop\CHEREPOK\Arduino\hodovaiaChast\Controller\Controller\obj\Release\net8.0-ios\ios-arm64\Controller.sourcelink.json
